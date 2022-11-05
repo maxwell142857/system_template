@@ -98,7 +98,8 @@
 				</el-card>
 			</el-col>
 		</el-row>
-		<el-row :gutter="20">
+		<!-- 图表 -->
+		<!-- <el-row :gutter="20">
 			<el-col :span="12">
 				<el-card shadow="hover">
 					<schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
@@ -109,7 +110,7 @@
 					<schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
 				</el-card>
 			</el-col>
-		</el-row>
+		</el-row> -->
 	</div>
 </template>
 
