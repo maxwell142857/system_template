@@ -38,7 +38,7 @@ interface Tree {
 const data: Tree[] = [
 	{
 		id: '1',
-		label: '系统首页'
+		label: 'Loan Preview'
 	},
 	{
 		id: '2',

@@ -47,7 +47,7 @@
 -   [x] pinia
 -   [x] typescript
 -   [x] 登录/注销
--   [x] Dashboard
+-   [x] LoanPreview
 -   [x] 表格
 -   [x] Tab 选项卡
 -   [x] 表单

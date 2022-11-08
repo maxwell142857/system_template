@@ -32,7 +32,7 @@ The scheme as a set of multi-function background frame templates, suitable for m
 
 -   [x] Element-UI
 -   [x] Login/Logout
--   [x] Dashboard
+-   [x] LoanPreview
 -   [x] Table
 -   [x] Tabs
 -   [x] From

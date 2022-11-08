@@ -5,21 +5,37 @@ import Home from "../views/home.vue";
 const routes:RouteRecordRaw[] = [
     {
         path: '/',
-        redirect: '/dashboard'
+        redirect: '/LoanPreview'
     }, {
         path: "/",
         name: "Home",
         component: Home,
         children: [
             {
-                path: "/dashboard",
-                name: "dashboard",
+                path: "/LoanPreview",
+                name: "LoanPreview",
                 meta: {
-                    title: '系统首页',
+                    title: 'Loan Preview',
                     permiss: '1'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ "../views/dashboard.vue")
+                component: () => import ( /* webpackChunkName: "LoanPreview" */ "../views/LoanPreview.vue")
             }, {
+                path: "/StatisticalAnalysis",
+                name: "StatisticalAnalysis",
+                meta: {
+                    title: 'Statistical Analysis',
+                    permiss: '1'
+                },
+                component: () => import ( /* webpackChunkName: "StatisticalAnalysis" */ "../views/StatisticalAnalysis.vue")
+            },{
+                path: "/ModelConfiguration",
+                name: "ModelConfiguration",
+                meta: {
+                    title: 'Model Configuration',
+                    permiss: '1'
+                },
+                component: () => import ( /* webpackChunkName: "ModelConfiguration" */ "../views/ModelConfiguration.vue")
+            },{
                 path: "/table",
                 name: "basetable",
                 meta: {
@@ -131,7 +147,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    document.title = `${to.meta.title} | vue-manage-system`;
+    document.title = `${to.meta.title} | chengdu80`;
+    document.title = `chengdu80`;
     const role = localStorage.getItem('ms_username');
     const permiss = usePermissStore();
     if (!role && to.path !== '/login') {

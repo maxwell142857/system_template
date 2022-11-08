@@ -14,7 +14,7 @@
 用户中心user.vue
     75行换头像
 
-首页dashboard.vue
+首页LoanPreview.vue
     布局参考文档：https://element.eleme.cn/#/zh-CN/component/layout
 
 图表charts.vue

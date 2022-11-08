@@ -57,9 +57,21 @@ import { useRoute } from 'vue-router';
 
 const items = [
 	{
-		icon: 'Odometer',
-		index: '/dashboard',
-		title: '系统首页',
+		icon: 'Document',
+		index: '/LoanPreview',
+		title: 'Loan Preview',
+		permiss: '1'
+	},
+	{
+		icon: 'DocumentChecked',
+		index: '/StatisticalAnalysis',
+		title: 'Statistical Analysis',
+		permiss: '1'
+	},
+	{
+		icon: 'Setting',
+		index: '/ModelConfiguration',
+		title: 'Model Configuration',
 		permiss: '1'
 	},
 	{

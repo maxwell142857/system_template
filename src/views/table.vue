@@ -8,7 +8,7 @@
 				</el-select>
 				<el-input v-model="query.name" placeholder="用户名" class="handle-input mr10"></el-input>
 				<el-button type="primary" :icon="Search" @click="handleSearch">搜索</el-button>
-				<el-button type="primary" :icon="Plus">新增</el-button>
+				<el-button type="primary" :icon="Plus" @click="addNew">新增</el-button>
 			</div>
 			<el-table :data="tableData" border class="table" ref="multipleTable" header-cell-class-name="table-header">
 				<el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
@@ -28,7 +28,7 @@
 						</el-image>
 					</template>
 				</el-table-column>
-				<el-table-column prop="address" label="地址"></el-table-column>
+				<el-table-column prop="address" label="地址" type="expand"></el-table-column>
 				<el-table-column label="状态" align="center">
 					<template #default="scope">
 						<el-tag
@@ -39,7 +39,7 @@
 					</template>
 				</el-table-column>
 
-				<el-table-column prop="date" label="注册时间"></el-table-column>
+				<el-table-column prop="date" label="注册时间" ></el-table-column>
 				<el-table-column label="操作" width="220" align="center">
 					<template #default="scope">
 						<el-button text :icon="Edit" @click="handleEdit(scope.$index, scope.row)" v-permiss="15">
@@ -88,6 +88,8 @@ import { ref, reactive } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { Delete, Edit, Search, Plus } from '@element-plus/icons-vue';
 import { fetchData } from '../api/index';
+import { getAdmin } from '../api/index';
+import { addAdmin } from '../api/index';
 
 interface TableItem {
 	id: number;
@@ -112,14 +114,37 @@ const getData = () => {
 		tableData.value = res.data.list;
 		pageTotal.value = res.data.pageTotal || 50;
 	});
+
 };
 getData();
 
+// 获取管理员
+const admin = () => {
+	getAdmin().then(res => {
+		console.log(res)
+	});
+
+};
+admin();
+
+const showInfor = () => {
+	console.log("test")
+
+};
 // 查询操作
 const handleSearch = () => {
 	query.pageIndex = 1;
 	getData();
 };
+
+const addNew = () => {
+	console.log("res")
+	addAdmin().then(res => {
+		
+		console.log(res)
+	});
+};
+
 // 分页导航
 const handlePageChange = (val: number) => {
 	query.pageIndex = val;
